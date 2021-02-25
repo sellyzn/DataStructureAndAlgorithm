@@ -1,5 +1,11 @@
-﻿using LeetCodeLabuladong.BinaryTree;
+﻿using LeetCodeLabuladong.BinaryTreeProblems;
+using LeetCodeLabuladong.DynamicProgramming;
+using LeetCodeLabuladong.DynamicProgramming.SubsequenceTypeProblems;
+using LeetCodeLabuladong.DynamicProgramming.TypicalDPProblems;
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace LeetCodeLabuladong
 {
@@ -7,8 +13,48 @@ namespace LeetCodeLabuladong
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //Console.WriteLine("Hello World!");
+            //string s1 = "horse";
+            //string s2 = "ros";
+            //MinDistance72 md = new MinDistance72();
+            //int res = md.MinDistance(s1, s2);
+            //Console.WriteLine(res);
+
+            //int m = s1.Length;
+            //int n = s2.Length;
+            //int[,] memo = new int[m, n];
+            //for(int i = 0; i < m; i++)
+            //{
+            //    for(int j = 0; j < n; j++)
+            //    {
+            //        memo[i, j] = -1;
+            //    }
+            //}
+
+            //for (int i = 0; i < m; i++)
+            //{
+            //    Console.WriteLine("i = " + i);
+            //    for (int j = 0; j < n; j++)
+            //    {
+            //        Console.WriteLine(memo[i, j]);
+            //    }
+                
+            //}
+
+            //string s1 = "b";
+            //string s2 = "a";
+            //LongestCommonSubsequence1143 lcs = new LongestCommonSubsequence1143();
+            //int res = lcs.MinDistance(s1, s2);
+            //Console.WriteLine(res);
+
+            int k = 2;
+            //int[] prices = new int[] { 3, 2, 6, 5, 0, 3 };
+            int[] prices = new int[] { 1,2 };
+            StockTradingProblems3Ddp st = new StockTradingProblems3Ddp();
+            int res1 = st.MaxProfit_k_any_1(k, prices);
+            Console.WriteLine(res1);
         }
+
         public int KthLargest(TreeNode root, int k)
         {
             this.k = k;
