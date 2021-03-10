@@ -1,4 +1,6 @@
-﻿using LeetCodeLabuladong.BinaryTreeProblems;
+﻿using LeetCodeLabuladong.ArrayProblems;
+using LeetCodeLabuladong.BinaryTreeProblems;
+using LeetCodeLabuladong.DataStructureDesignProblems;
 using LeetCodeLabuladong.DynamicProgramming;
 using LeetCodeLabuladong.DynamicProgramming.SubsequenceTypeProblems;
 using LeetCodeLabuladong.DynamicProgramming.TypicalDPProblems;
@@ -38,7 +40,7 @@ namespace LeetCodeLabuladong
             //    {
             //        Console.WriteLine(memo[i, j]);
             //    }
-                
+
             //}
 
             //string s1 = "b";
@@ -47,12 +49,33 @@ namespace LeetCodeLabuladong
             //int res = lcs.MinDistance(s1, s2);
             //Console.WriteLine(res);
 
-            int k = 2;
-            //int[] prices = new int[] { 3, 2, 6, 5, 0, 3 };
-            int[] prices = new int[] { 1,2 };
-            StockTradingProblems3Ddp st = new StockTradingProblems3Ddp();
-            int res1 = st.MaxProfit_k_any_1(k, prices);
-            Console.WriteLine(res1);
+            //int k = 2;
+            ////int[] prices = new int[] { 3, 2, 6, 5, 0, 3 };
+            //int[] prices = new int[] { 1,2 };
+            //StockTradingProblems3Ddp st = new StockTradingProblems3Ddp();
+            //int res1 = st.MaxProfit_k_any_1(k, prices);
+            //Console.WriteLine(res1);
+
+
+            //string s = "ADOBECODEBANC";
+            //string t = "ABC";
+            //SlidingWindow sd = new SlidingWindow();
+            //string res = sd.MinWindow76(s, t);
+            //string s1 = "ab";
+            //string s2 = "eidboaoo";
+            //bool res1 = sd.CheckInclusion567(s1, s2);
+            //Console.WriteLine(res1);
+
+            int[] nums1 = new int[] { 2,4 };
+            int[] nums2 = new int[] { 1,2,3,4 };
+            MonotonicStackProblems ms = new MonotonicStackProblems();
+            int[] res = ms.NextGreaterElementI(nums1, nums2);
+            foreach(int num in res)
+            {
+                Console.WriteLine(num);
+            }
+
+
         }
 
         public int KthLargest(TreeNode root, int k)
