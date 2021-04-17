@@ -94,7 +94,7 @@ namespace LeetCodeLabuladong.ArrayProblems
             return sum;
         }
 
-        //如果在中为cap, 能否在D天内运完货物？
+        //如果载重为cap, 能否在D天内运完货物？
         public bool CanFinishWeights(int[] weights, int cap, int D)
         {
             int i = 0;   //i为weights数组的索引

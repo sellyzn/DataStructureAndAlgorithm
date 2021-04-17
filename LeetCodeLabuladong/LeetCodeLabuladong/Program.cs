@@ -4,6 +4,9 @@ using LeetCodeLabuladong.DataStructureDesignProblems;
 using LeetCodeLabuladong.DynamicProgramming;
 using LeetCodeLabuladong.DynamicProgramming.SubsequenceTypeProblems;
 using LeetCodeLabuladong.DynamicProgramming.TypicalDPProblems;
+using LeetCodeLabuladong.LinkedListProblems;
+using LeetCodeLabuladong.LinkedListProblems.StudentChen;
+using LeetCodeLabuladong.StudentChen;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -57,25 +60,92 @@ namespace LeetCodeLabuladong
             //Console.WriteLine(res1);
 
 
-            //string s = "ADOBECODEBANC";
-            //string t = "ABC";
+            ////string s = "ADOBECODEBANC";
+            ////string t = "ABC";
             //SlidingWindow sd = new SlidingWindow();
-            //string res = sd.MinWindow76(s, t);
+            ////string res = sd.MinWindow76(s, t);
+            ////Console.WriteLine(res);
+
             //string s1 = "ab";
             //string s2 = "eidboaoo";
             //bool res1 = sd.CheckInclusion567(s1, s2);
             //Console.WriteLine(res1);
 
-            int[] nums1 = new int[] { 2,4 };
-            int[] nums2 = new int[] { 1,2,3,4 };
-            MonotonicStackProblems ms = new MonotonicStackProblems();
-            int[] res = ms.NextGreaterElementI(nums1, nums2);
-            foreach(int num in res)
-            {
-                Console.WriteLine(num);
-            }
+            //int[] nums1 = new int[] { 2,4 };
+            //int[] nums2 = new int[] { 1,2,3,4 };
+            //MonotonicStackProblems ms = new MonotonicStackProblems();
+            //int[] res = ms.NextGreaterElementI(nums1, nums2);
+            //foreach(int num in res)
+            //{
+            //    Console.WriteLine(num);
+            //}
+
+            //int[] nums = new int[] { -1, 0, 1, 2, -1, -4 };
+            ////Array.Sort(nums);
+            ////foreach(int num in nums)
+            ////{
+            ////    Console.WriteLine(num);
+            ////}
+            //TwoSumCollection tsc = new TwoSumCollection();
+            //var res = tsc.ThreeSum(nums);
+            //foreach(var l in res)
+            //{
+            //    foreach(var num in l)
+            //    {
+            //        Console.WriteLine(num);
+            //    }
+            //    Console.WriteLine("\n");
+            //}
 
 
+
+            //int[] nums = new int[] { 0, 0, 1, 1, 1, 2 };
+            //BinarySearch bs = new BinarySearch();
+            //int res = bs.LeftBound1(nums, 1);
+            //Console.WriteLine(res);
+
+            //SearchInsert35 si = new SearchInsert35();
+            //int[] nums = new int[] { 1, 3, 5, 6 };
+            //Console.WriteLine(si.SearchInsert(nums,7));
+
+
+            //ListNode head = new ListNode(1);
+            //ListNode l1 = new ListNode(2);
+            ////ListNode l2 = new ListNode(3);
+            ////ListNode l3 = new ListNode(4);
+            ////ListNode l4 = new ListNode(5);
+            //head.next = l1;
+            ////l1.next = l2;
+            ////l2.next = l3;
+            ////l3.next = l4;
+
+
+
+            //ReorderList143 ro = new ReorderList143();
+            //ro.ReorderList(head);
+            //RotateRight61 rr = new RotateRight61();
+            //ListNode res = rr.RotateRight(head, 2);
+            //ListNode cur = res;
+            //while(cur != null)
+            //{
+            //    Console.WriteLine(cur.val);
+            //    cur = cur.next;
+            //}
+
+            //int x = int.MinValue;
+            //Reverse7 rv = new Reverse7();
+            //int res = rv.Reverse(x);
+            //Console.WriteLine(res);
+            //PlusOne66 po = new PlusOne66();
+            //int[] digits = new int[] { 1, 9 };
+            //int[] res = po.PlusOne(digits);
+            //foreach(int num in res)
+            //{
+            //    Console.WriteLine(num);
+            //}
+
+            MySqrt69 ms = new MySqrt69();
+            Console.WriteLine(ms.MySqrt(2147395599));
         }
 
         public int KthLargest(TreeNode root, int k)

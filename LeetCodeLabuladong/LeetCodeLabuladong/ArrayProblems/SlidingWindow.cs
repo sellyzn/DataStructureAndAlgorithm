@@ -95,20 +95,17 @@ namespace LeetCodeLabuladong.ArrayProblems
                 //右移窗口
                 right++;
                 //进行窗口内数据的一系列更新
-                if (need.ContainsKey(c))
+                
+                if (need.ContainsKey(c))  //如果T中有字符c
                 {
-                    if (need[c] > 0)  //如果T中有字符c
-                    {
-                        if (window.ContainsKey(c))
-                            window[c]++;  //则window记录字符c的次数
-                        else
-                            window[c] = 1;
-                        if (window[c] == need[c])  //如果window中字符c的次数和need中相等
-                            valid++;  //则满足need条件 的字符个数值+1
-                    }
+                    if (window.ContainsKey(c))
+                        window[c]++;  //则window记录字符c的次数
+                    else
+                        window[c] = 1;
+                    if (window[c] == need[c])  //如果window中字符c的次数和need中相等
+                        valid++;  //则满足need条件 的字符个数值+1
                 }
-                else
-                    continue;
+                
                 //判断左侧窗口是否收缩
                 while(valid == need.Count())
                 {
@@ -123,17 +120,14 @@ namespace LeetCodeLabuladong.ArrayProblems
                     //左移窗口
                     left++;
                     //进行窗口内数据的一系列更新
+                    
                     if (need.ContainsKey(d))
                     {
-                        if (need[d] > 0)
-                        {
-                            if (window[d] == need[d])
-                                valid--;
-                            window[d]--;
-                        }
+                        if (window[d] == need[d])
+                            valid--;
+                        window[d]--;
                     }
-                    else
-                        continue;
+                    
                 }
             }
                 //返回最小覆盖子串
@@ -176,21 +170,15 @@ namespace LeetCodeLabuladong.ArrayProblems
                 right++;
 
                 if (need.ContainsKey(c))
-                {
-                    //if(need[c] > 0)
-                    //{
-                        if (window.ContainsKey(c))
-                            window[c]++;
-                        else
-                            window[c] = 1;
-                        if (window[c] == need[c])
-                            valid++;
-                    //}
+                {                    
+                    if (window.ContainsKey(c))
+                        window[c]++;
+                    else
+                        window[c] = 1;
+                    if (window[c] == need[c])
+                        valid++;                   
                 }
-                //else
-                //{
-                //    continue;
-                //}
+                
                 
                 while(right - left >= t.Length)
                 {
@@ -200,17 +188,12 @@ namespace LeetCodeLabuladong.ArrayProblems
                     left++;
                     if (need.ContainsKey(d))
                     {
-                        //if(need[d] > 0)
-                        //{
-                            window[d]--;
-                            if (window[d] == need[d])
-                                valid--;
-                        //}
+                        //先更新valid，再更新window，顺序不能反
+                        if (window[d] == need[d])
+                            valid--;                        
+                        window[d]--;  //顺序不能反过来
                     }
-                    //else
-                    //{
-                    //    continue;
-                    //}
+                    
                 }
             }
             return false;
@@ -241,21 +224,14 @@ namespace LeetCodeLabuladong.ArrayProblems
                 right++;
 
                 if (need.ContainsKey(c))
-                {
-                    //if(need[c] > 0)
-                    //{
+                {                    
                     if (window.ContainsKey(c))
                         window[c]++;
                     else
                         window[c] = 1;
                     if (window[c] == need[c])
-                        valid++;
-                    //}
-                }
-                //else
-                //{
-                //    continue;
-                //}
+                        valid++;                    
+                }                
 
                 while (right - left >= p.Length)
                 {
@@ -265,17 +241,11 @@ namespace LeetCodeLabuladong.ArrayProblems
                     left++;
                     if (need.ContainsKey(d))
                     {
-                        //if(need[d] > 0)
-                        //{
-                        window[d]--;
+                        //先更新valid，再更新window，顺序不能反
                         if (window[d] == need[d])
-                            valid--;
-                        //}
-                    }
-                    //else
-                    //{
-                    //    continue;
-                    //}
+                            valid--;                        
+                        window[d]--;
+                    }                    
                 }
             }
             return res;
@@ -284,7 +254,7 @@ namespace LeetCodeLabuladong.ArrayProblems
 
 
         //3、无重复字符的最长子串
-        public int LengthOfLongestSubstring(string s)
+        public int LengthOfLongestSubstring3(string s)
         {
             if (s == null || s.Length == 0)
                 return 0;
@@ -311,5 +281,6 @@ namespace LeetCodeLabuladong.ArrayProblems
             }
             return res;
         }
+
     }
 }
