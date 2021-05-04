@@ -65,8 +65,90 @@ namespace LeetCodeLabuladong.StudentChen.TreeCollections
         //返回与给定的前序和后序遍历匹配的任何二叉树
         public TreeNode ConstructFromPrePost(int[] pre, int[] post)
         {
+            //int N = pre.Length;
+            //if (pre == null || N == 0)
+            //    return null;
+            //TreeNode root = new TreeNode(pre[0]);
+            //if (N == 1)
+            //    return root;
+
+            //int L = 0;
+            //return Build_prepost(pre, 0, post, 0, pre.Length);
+            return Build_prepost(pre, 0, pre.Length - 1, post, 0, post.Length - 1);
+            
+        }
+        public TreeNode Build_prepost(int[] pre, int i0, int[] post, int i1, int N)
+        {
+            
+            if (pre == null || N == 0)
+                return null;
+            TreeNode root = new TreeNode(pre[i0]);
+            if (N == 1)
+                return root;
+
+            //int L = 1;
+            //for (; L < N; L++)
+            //{
+            //    if (post[i1 + L - 1] == pre[i0 + 1])
+            //        break;
+            //}
+            int L = 0;
+            for (int i = i1; i < i1 + N; i++)
+            {
+                if (post[i] == pre[i0 + 1])
+                {
+                    L = i - i1 + 1;
+                    break;
+                }
+            }
+            root.left = Build_prepost(pre, i0 + 1, post, i1, L);
+            root.right = Build_prepost(pre, i0 + L + 1, post, i1 + L, N - 1 - L);
+            return root;
+        }
+        public TreeNode  Build_prepost(int[] pre, int preStart, int preEnd, int[] post, int postStart, int postEnd)
+        {
+            if (postStart < postEnd)
+                return null;
+
+            TreeNode root = new TreeNode(pre[preStart]);
+
+            if (preStart == preEnd)
+                return root;
+
+            int leftRootValue = pre[preStart + 1];
+            int index = postStart;
+
+            for (int i = postStart; i <= postEnd; i++)
+            {
+                if (post[i] == leftRootValue)
+                {
+                    index = i;
+                    break;
+                }
+            }
+            int leftLength = index - postStart + 1;
+
+            //int rootValue = pre[preStart];
+            //int index = postStart;
+            //for (int i = postStart; i <= postEnd; i++)
+            //{
+            //    if (post[i] == rootValue)
+            //        index = i;                
+            //}
+            //int leftLength = index - postStart + 1;
+
+            //TreeNode root = new TreeNode(rootValue);
+
+            root.left = Build_prepost(pre, preStart + 1, preStart + leftLength, post, postStart, postStart + leftLength - 1);
+            root.right = Build_prepost(pre, preStart + leftLength + 1, preEnd, post, postStart + leftLength, postEnd - 1);
+            return root;
 
         }
+
+        //public TreeNode Build_prepost(int[] pre, int[] post)
+        //{
+        //    if()
+        //}
 
 
 
