@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace LeetCodeLabuladong.StudentChen
 {
+    //众数
+    //剑指Offer39.数组中出现次数超过一半的数字
     public class MajorityElement169
     {
         //1.Hash Table
